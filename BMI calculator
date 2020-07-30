@@ -1,0 +1,24 @@
+
+def input_integer(prompt):
+    value=float(input(prompt))
+    return value
+
+weight=input_integer( "Enter your weight (in kgs): ")
+height_unit= input("What is your preferred unit of height? Type 'F for feet and 'M' for meters: ")
+if height_unit=="F":
+    feet=input_integer("You will enter your height given as feet and inches. First enter feet: ")
+    inch=input_integer( "Now enter inches: " )
+    height_meter=(feet+inch/12)*0.3048
+if height_unit=="M":
+    height_meter=input_integer( "What is your height in meters")
+
+BMI=weight/(height_meter**2)
+print("Your BMI is", BMI)
+if BMI<18.5:
+    print("underweight")
+elif BMI<25 and BMI >=18.5:
+    print(" Normal")
+elif BMI>=25 and BMI <=30:
+    print(" Overweight")
+elif BMI>30:
+    print("Verry Overweight")
